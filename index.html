@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title align="center">Calculator</title>
+	<style> 
+
+		.equal{
+			text-align: center;
+			width:100px;
+		}
+		table{
+			background-color: black;
+			position:relative;
+			position:absolute;
+			top:30%;
+			left:30%;
+		
+		}
+		table td{
+			background-color:pink ;
+			box-shadow:5px 0px 5px  black;
+		}
+		button{
+			background-color:grey;
+			height:40px;
+			width:40px;
+			box-shadow: black;
+		}
+		button:hover{
+			background-color:black ;
+			color:white;
+		}
+		#display{
+			width: 255px;
+			background-color:green;
+			color:black;
+			text-align: right;
+			background-color: #aaeeee;
+/*			width:100px;*/
+padding: 20px;
+			/* height */
+				}
+	</style>
+
+
+
+
+	<script type="text/javascript">
+		function appendNumber(x){
+			document.getElementById("display").value+=x;
+		}
+		function result(){
+			var e=document.getElementById("display").value;
+			var ee=eval(e);
+			document.getElementById("display").value=ee;
+		}
+		function clea(){
+			document.getElementById("display").value="";
+		}
+
+		function dele(){
+			var val=document.getElementById("display").value;
+		val=val.slice(0, -1);
+			document.getElementById("display").value=val;
+		}
+
+
+
+
+
+	</script>
+</head>
+<body><br><br><br><Br>
+	<center><h1>Calculator</h1></center>
+	<table border="1" cellspacing="5" cellpadding="10">
+		<tr>
+		<td colspan="4" >
+			
+		<!-- </td> -->
+			<input type="text" id="display"></td>
+	</tr>
+	<tr>
+		<td><button onclick="appendNumber('1')">1</button></td>
+		<td><button onclick="appendNumber('2');">2</button></td>
+		<td><button onclick="appendNumber('3');">3</button></td>
+		<td><button onclick="clea();">AC</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="appendNumber('4');">4</button></td>
+		<td><button onclick="appendNumber('5');">5</button></td>
+		<td><button onclick="appendNumber('6');">6</button></td>
+		<td><button onclick="appendNumber('+');">+</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="appendNumber('7');">7</button></td>
+		<td><button onclick="appendNumber('8');">8</button></td>
+		<td><button onclick="appendNumber('9');">9</button></td>
+		<td><button onclick="appendNumber('-');" >-</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="appendNumber('0');">0</button></td>
+		<td><button onclick="appendNumber('/');">/</button></td>
+		<td><button onclick="appendNumber('%');">%</button></td>
+		<td><button onclick="appendNumber('*');">*</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="dele();">Del</button></td>
+		<td><button onclick="appendNumber('.');">.</button></td>
+		<td colspan="2" ><button class="equal" onclick="result();">=</button></td>
+	</tr>
+
+	<!-- <tr>
+		<td><button>0</button></td>
+		<td><button>/</button></td>
+		<td><button>Del</button></td>
+		<td class="equal"><button>=</button></td>
+	</tr> -->
+	</table>
+	
+</body>
+</html>
